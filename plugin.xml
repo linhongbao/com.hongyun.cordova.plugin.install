@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.hongyun.cordova.plugin.install"
+      version="0.0.1">
+    <name>CDVInstall</name>
+    <description>Cordova CDVInstall Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,CDVInstall</keywords>
+
+
+    <js-module src="www/Install.js" name="Install">
+        <clobbers target="navigator.hongyun.install" />
+    </js-module>
+
+	<platform name="android">
+
+        <config-file target="config.xml" parent="/*">
+			<feature name="Install">
+				<param name="android-package" value="com.hongyun.cordova.plugin.install.Install"/>
+				<param name="onload" value="true" />
+			</feature>
+        </config-file>
+
+		<source-file
+				src="src/android/com/hongyun/cordova/plugin/install/Install.java"
+				target-dir="src/com/hongyun/cordova/plugin/install" />
+	</platform>
+
+</plugin>
